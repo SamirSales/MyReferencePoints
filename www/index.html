@@ -38,6 +38,8 @@
         <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
         <!-- additional css -->
         <link rel="stylesheet" type="text/css" href="css/index.css">
+        <!-- including angularjs -->
+        <script src="js/angular.min.js"></script>
         <title>Hello World</title>
     </head>
     <body>
@@ -57,16 +59,15 @@
               <p class="event listening">Connecting to Device</p>
               <p class="event received">Holy Toledo</p>
           </div>
-          <input type="button" class="btn btn-primary" style="margin-top:10px;" onclick="alert('I am an inline script, too!');" value='My button'/>
+          <input type="button" class="btn btn-primary" style="margin-top:10px;" onclick="test();" value='My button'/>
+
+          <div style="margin-top:30px;" ng-app="myApp" ng-controller="myCtrl">
+            <button class='btn btn-default' ng-click="count = count + 1">Click Me!</button>
+            <h1>{{ count }}</h1>
+          </div>
       </div>
+
       <script type="text/javascript" src="cordova.js"></script>
       <script type="text/javascript" src="js/index.js"></script>
-
-
-      <div ng-app="myApp" ng-controller="myCtrl">
-        <button class='btn btn-default' ng-click="count = count + 1">Click Me!</button>
-        <p>{{ count }}</p>
-      </div>
-
     </body>
 </html>
