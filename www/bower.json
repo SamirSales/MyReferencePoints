@@ -1,0 +1,21 @@
+{
+  "name": "MyReferencePoints",
+  "homepage": "https://github.com/SamirSales/MyReferencePoints",
+  "authors": [
+    "Samir Sales <samir.sribeiro@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "angularjs#^1.5.8"
+  }
+}
