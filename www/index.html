@@ -32,20 +32,41 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <!-- including bootstrap -->
+        <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+        <!-- additional css -->
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Samir Sales</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Holy Toledo</p>
-            </div>
-            <input type="button" value='My button'/>
+
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">My Reference Points</a>
+          </div>
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+      </nav>
+
+      <div align="center">
+          <h1>Samir Sales</h1>
+          <div id="deviceready" class="blink">
+              <p class="event listening">Connecting to Device</p>
+              <p class="event received">Holy Toledo</p>
+          </div>
+          <input type="button" class="btn btn-primary" style="margin-top:10px;" onclick="alert('I am an inline script, too!');" value='My button'/>
+      </div>
+      <script type="text/javascript" src="cordova.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+
+
+      <div ng-app="myApp" ng-controller="myCtrl">
+        <button class='btn btn-default' ng-click="count = count + 1">Click Me!</button>
+        <p>{{ count }}</p>
+      </div>
 
     </body>
 </html>
