@@ -3,16 +3,98 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" /> -->
     <link rel="stylesheet" href="css/index.css" />
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script> -->
+
+    <!-- Framework7 -->
+    <link rel="stylesheet" href="bower_components/Framework7/dist/css/framework7.material.min.css" />
+    <link rel="stylesheet" href="bower_components/Framework7/dist/css/framework7.material.colors.min.css" />
+    <link rel="stylesheet" href="bower_components/Framework7/dist/css/my-app.css" />
+
     <!-- this script below is necessary -->
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/maps.js"></script>
   </head>
   <body>
-    <h3 class="title" align='center'
-      style="margin-left:1px; margin-right:1px; margin-top:1px;">My Reference Points</h3>
-    <div class="screenFiller" style='margin-top:45px;' id="map_canvas"></div>
+
+    <div class="panel-overlay"></div>
+    <!-- Left Panel with Cover effect -->
+    <div class="panel panel-left panel-cover">
+      <div class="page" data-page="menu-page">
+        <div class="page-content">
+          <!-- another navbar -->
+          <div class="navbar">
+            <div class="navbar-inner">
+              <div class="center">Menu</div>
+            </div>
+          </div>
+          <!-- options of menu -->
+          <div class="content-block">
+            <a class="button button-raised" href="#">Refresh Position</a>
+          </div>
+          <div class="content-block-title">Map Style</div>
+          <div class="list-block">
+            <ul>
+              <li class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">ROADMAP</div>
+                </div>
+              </li>
+              <li class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">SATELLITE</div>
+                </div>
+              </li>
+              <li class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">HYBRID</div>
+                </div>
+              </li>
+              <li class="item-content">
+                <div class="item-inner">
+                  <div class="item-title">TERRAIN</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Views -->
+    <div class="views">
+      <!-- Your main view -->
+      <div class="view view-main">
+        <!-- Pages -->
+        <div class="pages">
+          <div class="page" data-page="home">
+            <div class="page-content navbar-fixed">
+              <!-- navbar -->
+              <div class="navbar">
+                <div class="navbar-inner">
+                  <div class="center">My Reference Points</div>
+                  <div class="right"><a class="open-panel link icon-only" href="#">
+                    <i class="icon icon-bars"></i></a></div>
+                </div>
+              </div>
+              <!-- maps -->
+              <div class="screenFiller" style='margin-top:45px;' id="map_canvas"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Another view -->
+      <div class="view another-view">
+        <!-- Pages -->
+        <div class="pages">
+
+        </div>
+      </div>
+    </div>
+
+    <script src="bower_components/Framework7/dist/js/framework7.min.js"></script>
+    <script src="bower_components/Framework7/dist/js/my-app.js"></script>
   </body>
 </html>
