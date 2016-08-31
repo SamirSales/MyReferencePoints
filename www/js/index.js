@@ -48,9 +48,6 @@ var app = {
     }
 };
 
-function test(){
-  alert('I am an inline script, too!');
-}
 var app2 = angular.module('myApp', []);
 app2.controller('myCtrl', function($scope) {
     $scope.count = 0;

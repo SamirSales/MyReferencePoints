@@ -8,7 +8,11 @@
     },
     "installed_plugins": {
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.cordova.hellocordova"
+            "PACKAGE_NAME": "io.github.samirsales.myreferencepoints"
+        },
+        "plugin.google.maps": {
+            "API_KEY_FOR_ANDROID": "AIzaSyA_ph-T8sFVs3zAOs-Yp7MYKa39PpXR4u0",
+            "PACKAGE_NAME": "io.github.samirsales.myreferencepoints"
         }
     },
     "dependent_plugins": {}
