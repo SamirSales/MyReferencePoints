@@ -16,20 +16,23 @@
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/maps.js"></script>
   </head>
-  <body>
+  <body class="theme-teal">
 
     <div class="panel-overlay"></div>
     <!-- Left Panel with Cover effect -->
     <div class="panel panel-left panel-cover">
       <div class="page" data-page="menu-page">
         <div class="page-content">
-          <!-- another navbar -->
-          <div class="navbar">
-            <div class="navbar-inner">
-              <div class="center">Menu</div>
-            </div>
-          </div>
-          <!-- options of menu -->
+          
+          <!-- Search Bar -->
+          <form class="searchbar">
+              <div class="searchbar-input">
+                  <input type="search" placeholder="Search">
+                  <a href="#" class="searchbar-clear"></a>
+              </div>
+              <a href="#" class="searchbar-cancel">Cancel</a>
+          </form>
+
           <div class="content-block">
             <a class="button button-raised" href="#">Refresh Position</a>
           </div>
@@ -76,7 +79,8 @@
                 <div class="navbar-inner">
                   <div class="center">My Reference Points</div>
                   <div class="right"><a class="open-panel link icon-only" href="#">
-                    <i class="icon icon-bars"></i></a></div>
+                    <i class="icon icon-bars"></i></a>
+                  </div>
                 </div>
               </div>
               <!-- maps -->
