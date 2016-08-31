@@ -8,7 +8,7 @@ document.addEventListener("deviceready", function() {
   // Initialize the map view
   map = plugin.google.maps.Map.getMap(div,{
     'backgroundColor': 'white',
-    'mapType': plugin.google.maps.MapTypeId.HYBRID,
+    'mapType': plugin.google.maps.MapTypeId.ROADMAP,
     'controls': {
       'compass': true,
       'myLocationButton': true,
@@ -23,7 +23,7 @@ document.addEventListener("deviceready", function() {
     },
     'camera': {
       'latLng': MAP_CENTER,
-      'tilt': 30,
+      'tilt': 0,
       'zoom': 16,
       'bearing': 50
     }
@@ -39,9 +39,8 @@ function getMyLocation(){
       'position': location.latLng,
       'title': 'You are here!'
     }, function(marker) {
-      map.animateCamera({
+      map.moveCamera({
         'target': location.latLng,
-        'zoom': 16
       }, function() {
         marker.showInfoWindow();
       });
