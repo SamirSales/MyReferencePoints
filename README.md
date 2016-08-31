@@ -1,7 +1,11 @@
-it's not finished yet.
+*** This project is not finished yet. ***
+# My Reference Points
+This is an android application...
 
-- Dependencies
- cordova platform add android
+## Dependencies
+- cordova platform add android
+- npm install -g bower
+- bower install bootstrap
+- bower install angularjs
 
-
-keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android
+https://github.com/mapsplugin/cordova-plugin-googlemaps
