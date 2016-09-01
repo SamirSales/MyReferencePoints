@@ -51,6 +51,5 @@ $$("#hybrid_link").on( 'click', function(event) {
 
 $$("#terrain_link").on( 'click', function(event) {
   frameWork7.closePanel();
-  //TODO
   map.setMapTypeId(plugin.google.maps.MapTypeId.TERRAIN);
 });
