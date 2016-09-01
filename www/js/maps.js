@@ -48,9 +48,9 @@ function getMyLocation(){
   });
 }
 
-function geoLocation(){
+function geoLocation(search){
   var request = {
-    'address': 'Fortaleza'
+    'address': search
   };
   plugin.google.maps.Geocoder.geocode(request, function(results) {
     if (results.length) {
@@ -59,7 +59,7 @@ function geoLocation(){
 
       map.addMarker({
         'position': position,
-        'title':  JSON.stringify(result.position)
+        'title':  search.toUpperCase() // JSON.stringify(result.position)
       }, function(marker) {
 
         map.animateCamera({

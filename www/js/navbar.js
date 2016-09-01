@@ -22,5 +22,8 @@ var searchBar = myApp.searchbar('.searchbar', {
 
 $$("#searchForm").on( 'submit', function(event) {
   var text = $$('#searchInput').val();
-  myApp.alert('onSearch! - '+text);
+  // myApp.alert('onSearch! - '+text);
+  geoLocation(text);
+  $$('#searchInput').val('');
+  myApp.closePanel();
 });
