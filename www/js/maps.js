@@ -36,6 +36,7 @@ document.addEventListener("deviceready", function() {
 function getMyLocation(){
   map.getMyLocation(function(location) {
     map.addMarker({
+      'icon': 'blue',
       'position': location.latLng,
       'title': 'You are here!'
     }, function(marker) {
