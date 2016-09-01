@@ -14,7 +14,6 @@
 
     <!-- this script below is necessary -->
     <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/maps.js"></script>
   </head>
   <body class="theme-teal">
 
@@ -23,7 +22,7 @@
     <div class="panel panel-left panel-cover">
       <div class="page" data-page="menu-page">
         <div class="page-content">
-          
+
           <!-- Search Bar -->
           <form class="searchbar">
               <div class="searchbar-input">
@@ -84,7 +83,7 @@
                 </div>
               </div>
               <!-- maps -->
-              <div class="screenFiller" style='margin-top:45px;' id="map_canvas"></div>
+              <div class="screenFiller" style='margin-top:55px;' id="map_canvas"></div>
             </div>
           </div>
         </div>
@@ -98,12 +97,9 @@
       </div>
     </div>
 
+    <script type="text/javascript" src="js/maps.js"></script>
     <script src="bower_components/Framework7/dist/js/framework7.min.js"></script>
     <script src="bower_components/Framework7/dist/js/my-app.js"></script>
-    <script>
-    var myApp = new Framework7({
-      swipePanel: 'left'
-    });
-    </script>
+    <script type="text/javascript" src="js/navbar.js"></script>
   </body>
 </html>
