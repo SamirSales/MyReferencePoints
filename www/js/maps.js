@@ -79,7 +79,7 @@ function geoLocation(search){
         });
 
         marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
-          //TODO: location save (id, lat, long, speed, bearing, title, address)
+          //TODO: location save (id, lat, long, title, address)
 
           // frameWork7.alert('Testando Alert FW7');
           frameWork7.popup('.popup-services');
