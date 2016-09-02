@@ -116,7 +116,8 @@
                 <div class="item-inner">
                   <div class="item-title label">Title</div>
                   <div class="item-input item-input-field">
-                    <input class="item-input item-input-field" placeholder="Location title" type="text">
+                    <input id="input_title_pu" class="item-input item-input-field"
+                      style="color: #32B0DE;" placeholder="Location title" type="text">
                   </div>
                 </div>
               </div>
@@ -124,11 +125,11 @@
           </ul>
         </div>
 
-        <p>Av. 13 de Maio, 4567, Fortaleza</p>
-        <p class="color-gray">20892.0928 -89298.2928</p>
+        <p id="address_pu">{{name}}</p>
+        <p id="latlng_pu" class="color-gray">20892.0928 -89298.2928</p>
         <p class="buttons-row">
-          <a href="#" class="button button-raised">Save</a>
-          <a href="#" class="button button-raised">Delete</a>
+          <a id="save_btn_pu" href="#" class="button button-raised">Save</a>
+          <a id="del_btn_pu" href="#" class="button button-raised">Delete</a>
           <a href="#" class="button button-raised close-popup">Cancel</a>
         </p>
 

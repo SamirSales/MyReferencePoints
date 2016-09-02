@@ -47,9 +47,9 @@ function getMyLocation(){
       });
 
       //TODO: JUST TESTING POPUP
-      marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
-        frameWork7.popup('.popup-services');
-      });
+      // marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
+      //   frameWork7.popup('.popup-services');
+      // });
 
 
     });
@@ -79,10 +79,17 @@ function geoLocation(search){
         });
 
         marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
-          //TODO: location save
+          //TODO: location save (id, lat, long, speed, bearing, title, address)
+
           // frameWork7.alert('Testando Alert FW7');
           frameWork7.popup('.popup-services');
+          $$("#address_pu").text(search);
+          $$("#input_title_pu").val(search);
 
+          var parsedJson = JSON.parse(JSON.stringify(result.position));
+          var latitude = parsedJson['lat'];
+          var longitude = parsedJson['lng'];
+          $$("#latlng_pu").text('lat:'+latitude+' long:'+longitude);
         });
       });
 
