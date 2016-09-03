@@ -51,9 +51,10 @@ function getMyLocation(){
       //   frameWork7.popup('.popup-services');
       // });
 
-
     });
   });
+
+  getAllLocationsDB();
 }
 
 function geoLocation(search){
@@ -92,7 +93,6 @@ function geoLocation(search){
           $$("#latlng_pu").text('lat:'+latitude+' long:'+longitude);
         });
       });
-
 
     } else {
       alert("Not found");
