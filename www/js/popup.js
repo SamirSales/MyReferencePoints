@@ -15,6 +15,11 @@ $$('#save_btn_pu').on('click', function(){
       $$("#input_title_pu").val(), $$("#address_pu").text());
   }else{
     //TODO edition
+    // alert('edit id = '+idForEditLocation);
+    updateLocationDB($$("#input_title_pu").val(), idForEditLocation);
+    map.clear();
+    getMyLocation();
+    frameWork7.closeModal('.popup-services');
   }
 
   map.clear();

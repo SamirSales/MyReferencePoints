@@ -84,7 +84,7 @@ function getAllLocationsDB(){
 
           map.addMarker({
             'position': new plugin.google.maps.LatLng(latitude, longitude),
-            'title': title.toUpperCase(),
+            'title': title,
             'snippet': "(click to edit)"
           }, function(marker) {
             marker.showInfoWindow();
@@ -127,6 +127,24 @@ function removeLocationDB(id) {
     }, function (error) {
         console.log('transaction error: ' + error.message);
     }, function () {
+        console.log('transaction ok');
+    });
+}
+
+function updateLocationDB(title, id) {
+    db.transaction(function (tx) {
+        var query = "UPDATE '"+TABLE_REFERENCES+"' SET title = ? WHERE id = ?";
+
+        tx.executeSql(query, [title, id], function(tx, res) {
+            console.log("insertId: " + res.insertId);
+            console.log("rowsAffected: " + res.rowsAffected);
+        },
+        function(tx, error) {
+            console.log('UPDATE error: ' + error.message);
+        });
+    }, function(error) {
+        console.log('transaction error: ' + error.message);
+    }, function() {
         console.log('transaction ok');
     });
 }

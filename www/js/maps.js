@@ -71,7 +71,7 @@ function geoLocation(search){
 
       map.addMarker({
         'position': position,
-        'title':  search.toUpperCase(), // JSON.stringify(result.position)
+        'title':  search, // JSON.stringify(result.position)
         'snippet': "(click to save)"
       }, function(marker) {
 
