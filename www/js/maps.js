@@ -33,6 +33,9 @@ document.addEventListener("deviceready", function() {
 
 }, false);
 
+var markerSelectedLat;
+var markerSelectedLng;
+
 function getMyLocation(){
   map.getMyLocation(function(location) {
     map.addMarker({
@@ -88,9 +91,9 @@ function geoLocation(search){
           $$("#input_title_pu").val(search);
 
           var parsedJson = JSON.parse(JSON.stringify(result.position));
-          var latitude = parsedJson['lat'];
-          var longitude = parsedJson['lng'];
-          $$("#latlng_pu").text('lat:'+latitude+' long:'+longitude);
+          markerSelectedLat = parsedJson['lat'];
+          markerSelectedLng = parsedJson['lng'];
+          $$("#latlng_pu").text('lat:'+markerSelectedLat+' long:'+markerSelectedLng);
         });
       });
 

@@ -44,6 +44,29 @@ document.addEventListener('deviceready', function() {
   }
 });
 
+// variables for loaction saving
+// var idSelected = null;
+// var titleToSave;
+// var latToSave;
+// var lngToSave;
+// var addressToSave;
+
+function saveNewLocation(idSelected, latToSave, lngToSave,titleToSave,addressToSave){
+  db = window.sqlitePlugin.openDatabase({name: 'references.db', location: 'default'});
+  if(db != null){
+    db.transaction(function(tx) {
+      tx.executeSql('INSERT INTO \''+TABLE_REFERENCES+'\' VALUES (?,?,?,?,?)',
+      [idSelected, latToSave, lngToSave,titleToSave,addressToSave]);
+    }, function(error) {
+      console.log('Transaction ERROR: ' + error.message);
+      alert('Transaction ERROR: ' + error.message);
+    }, function() {
+      console.log('Populated database OK');
+    });
+  }
+
+}
+
 function getAllLocationsDB(){
   if(db != null){
     db.transaction(function(tx) {
@@ -60,7 +83,7 @@ function getAllLocationsDB(){
           map.addMarker({
             'position': new plugin.google.maps.LatLng(latitude, longitude),
             'title': title.toUpperCase(),
-            'snippet': "(click to save)"
+            'snippet': "(click to edit)"
           }, function(marker) {
             marker.showInfoWindow();
           });
