@@ -12,3 +12,4 @@ For the layout building it was necessary the use of the Google Maps plugins and 
 ![Screenshot Maproad style](screenshot_maproad.png)
 ![Screenshot Navigator style](screenshot_nav.png)
 ![Screenshot Satellite style](screenshot_satellite.png)
+![Screenshot Hybrid style](screenshot_hybrid.png)
