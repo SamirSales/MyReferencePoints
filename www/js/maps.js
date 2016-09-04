@@ -48,12 +48,6 @@ function getMyLocation(){
       }, function() {
         marker.showInfoWindow();
       });
-
-      //TODO: JUST TESTING POPUP
-      // marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
-      //   frameWork7.popup('.popup-services');
-      // });
-
     });
   });
 
