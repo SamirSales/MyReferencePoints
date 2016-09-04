@@ -1,7 +1,7 @@
 # My Reference Points
 This is an android application made by the using of Cordova platform. The main functionality of this software is to keep the user locations and displays them on the maps.
 
-For the layout building it was necessary the use of the Google Maps plugins and [Framework 7](https:framework7.io).
+For the layout building it was necessary the use of the Google Maps plugins and [Framework 7](https://framework7.io).
 
 ## Dependencies
 - cordova platform add android
