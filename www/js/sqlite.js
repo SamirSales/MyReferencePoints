@@ -18,7 +18,7 @@ document.addEventListener('deviceready', function() {
         +"'latitude' INTEGER, "
         +"'longitude' INTEGER, "
         +"'title' TEXT, "
-        +"address TEXT)");
+        +"'address' TEXT)");
 
       // addLocationDB(-3.746286, -38.562930,'Av Humberto Monte','uma avenida');
       // addLocationDB(-3.746363, -38.532673,'Av 13 de Maio','uma avenida');
@@ -56,7 +56,7 @@ function saveNewLocation(idSelected, latToSave, lngToSave,titleToSave,addressToS
   if(db != null){
     db.transaction(function(tx) {
       tx.executeSql('INSERT INTO \''+TABLE_REFERENCES+'\' VALUES (?,?,?,?,?)',
-      [idSelected, latToSave, lngToSave,titleToSave,addressToSave]);
+      [idSelected, latToSave, lngToSave, titleToSave, addressToSave]);
     }, function(error) {
       console.log('Transaction ERROR: ' + error.message);
       alert('Transaction ERROR: ' + error.message);
@@ -67,17 +67,19 @@ function saveNewLocation(idSelected, latToSave, lngToSave,titleToSave,addressToS
 
 }
 
+var idForEditLocation;
+
 function getAllLocationsDB(){
   if(db != null){
     db.transaction(function(tx) {
       tx.executeSql('SELECT * FROM \''+TABLE_REFERENCES+'\'', [], function(tx, rs) {
 
         for (i = 0; i < rs.rows.length; i++){
-          var id = rs.rows.item(i).id;
-          var latitude = rs.rows.item(i).latitude;
-          var longitude = rs.rows.item(i).longitude;
-          var title = rs.rows.item(i).title;
-          var address = rs.rows.item(i).address;
+          const id = rs.rows.item(i).id;
+          const latitude = rs.rows.item(i).latitude;
+          const longitude = rs.rows.item(i).longitude;
+          const title = rs.rows.item(i).title;
+          const address = rs.rows.item(i).address;
           // alert(' [' + id+', '+latitude+', '+longitude+', '+title+', '+address+']');
 
           map.addMarker({
@@ -86,6 +88,21 @@ function getAllLocationsDB(){
             'snippet': "(click to edit)"
           }, function(marker) {
             marker.showInfoWindow();
+
+            marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
+              // popup to save new location
+              frameWork7.popup('.popup-services');
+              $$("#address_pu").text(address);
+              $$("#input_title_pu").val(title);
+
+              idForEditLocation = id;
+              // var parsedJson = JSON.parse(JSON.stringify(result.position));
+              // markerSelectedLat = latitude; //parsedJson['lat'];
+              // markerSelectedLng = longitude; //parsedJson['lng'];
+              // $$("#latlng_pu").text('lat:'+markerSelectedLat+' long:'+markerSelectedLng);
+              $$("#latlng_pu").text('lat:'+latitude+' long:'+longitude);
+            });
+
           });
         }
 
@@ -94,4 +111,22 @@ function getAllLocationsDB(){
       });
     });
   }
+}
+
+function removeLocationDB(id) {
+    db.transaction(function (tx) {
+        var query = "DELETE FROM '"+TABLE_REFERENCES+"' WHERE id = ?";
+
+        tx.executeSql(query, [id], function (tx, res) {
+            console.log("removeId: " + res.insertId);
+            console.log("rowsAffected: " + res.rowsAffected);
+        },
+        function (tx, error) {
+            console.log('DELETE error: ' + error.message);
+        });
+    }, function (error) {
+        console.log('transaction error: ' + error.message);
+    }, function () {
+        console.log('transaction ok');
+    });
 }

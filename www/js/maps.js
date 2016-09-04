@@ -83,13 +83,12 @@ function geoLocation(search){
         });
 
         marker.addEventListener(plugin.google.maps.event.INFO_CLICK, function() {
-          //TODO: location save (id, lat, long, title, address)
-
-          // frameWork7.alert('Testando Alert FW7');
+          // popup to save new location
           frameWork7.popup('.popup-services');
           $$("#address_pu").text(search);
           $$("#input_title_pu").val(search);
 
+          idForEditLocation = null;
           var parsedJson = JSON.parse(JSON.stringify(result.position));
           markerSelectedLat = parsedJson['lat'];
           markerSelectedLng = parsedJson['lng'];
