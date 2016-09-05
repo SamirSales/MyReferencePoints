@@ -3,15 +3,22 @@ This is an android application made by the using of Cordova platform. The main f
 
 For the layout building it was necessary the use of the Google Maps plugins and [Framework 7](https://framework7.io).
 
-# Installation
+# Plugins
+- [cordova-sqlite-storage](https://github.com/litehelpers/Cordova-sqlite-storage)
+- [cordova-plugin-googlemaps](https://github.com/mapsplugin/cordova-plugin-googlemaps)
 
-### 1) Install Cordova and Android Platform
+# Installation
+### 1) Install Cordova
 ```shell
 npm install -g cordova
+```
+
+### 2) Install Android Platform
+```shell
 cordova platform add android
 ```
 
-### 2) Install Plugins of Sqlite and Google Maps
+### 3) Install Plugins of Sqlite and Google Maps
 ```shell
 cordova plugin add cordova-sqlite-storage
 cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="YOUR_ANDROID_API_KEY_IS_HERE"
@@ -23,6 +30,3 @@ cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="YOU
 ![Screenshot Satellite style](screenshot_satellite.png)
 ![Screenshot Hybrid style](screenshot_hybrid.png)
 
-# Plugins
-- [cordova-sqlite-storage](https://github.com/litehelpers/Cordova-sqlite-storage)
-- [cordova-plugin-googlemaps](https://github.com/mapsplugin/cordova-plugin-googlemaps)
