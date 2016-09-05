@@ -6,15 +6,23 @@ For the layout building it was necessary the use of the Google Maps plugins and 
 # Installation
 
 ### 1) Install Cordova and Android Platform
-- npm install -g cordova
-- cordova platform add android
+```shell
+npm install -g cordova
+cordova platform add android
+```
 
 ### 2) Install Plugins of Sqlite and Google Maps
-- cordova plugin add cordova-sqlite-storage ([more](https://github.com/litehelpers/Cordova-sqlite-storage))
-- cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="YOUR_ANDROID_API_KEY_IS_HERE" ([more](https://github.com/mapsplugin/cordova-plugin-googlemaps))
+```shell
+cordova plugin add cordova-sqlite-storage
+cordova plugin add cordova-plugin-googlemaps --variable API_KEY_FOR_ANDROID="YOUR_ANDROID_API_KEY_IS_HERE"
+```
 
 # Screenshots
 ![Screenshot Maproad style](screenshot_maproad.png)
 ![Screenshot Navigator style](screenshot_nav.png)
 ![Screenshot Satellite style](screenshot_satellite.png)
 ![Screenshot Hybrid style](screenshot_hybrid.png)
+
+# Plugins
+- [cordova-sqlite-storage](https://github.com/litehelpers/Cordova-sqlite-storage)
+- [cordova-plugin-googlemaps](https://github.com/mapsplugin/cordova-plugin-googlemaps)
